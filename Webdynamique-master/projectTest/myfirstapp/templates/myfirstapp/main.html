@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}  {% endblock  %}</title>
+    <link rel="stylesheet" type="text/css"  href="{%static 'myfirstapp/index.css' %}"/>
+</head>
+<body class="fond">
+  <header>
+        <nav>
+            <div class="symbole"> Mon Profil </div>
+            <div rôle="menu">
+                <ul>
+                    <li><a href=index><i class="fas fa-home" aria-hidden="true"></i> Accueil
+                        </a></li>
+                    <li><a href="passion" target="blank"><i class="far fa-newspaper"></i> Passion
+                        </a></li>
+                    <li><a href="#ancre"><i class="fas fa-envelope"></i> Contact
+                        </a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+{% block content %}
+{% endblock %}
+</body>
+</html>

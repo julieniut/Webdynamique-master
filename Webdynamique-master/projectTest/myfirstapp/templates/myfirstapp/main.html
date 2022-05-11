@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <title>{% block title %}  {% endblock  %}</title>
-    <link rel="stylesheet" type="text/css"  href="{%static 'myfirstapp/index.css' %}"/>
-</head>
+    <head>
+                 {% load static %}
+        <title>{% block title %}  {% endblock  %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" type="text/css">
+        <link href="image/logo.png" rel="shortcut icon" type="image" />
+        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css"  href="{%static 'myfirstapp/index.css' %}"/>
+
+    </head>
 <body class="fond">
   <header>
         <nav>
-            <div class="symbole"> Mon Profil </div>
+            <div class="symbole"> Mon Profil  {{nom}} {{nom.id}}</div>
             <div rôle="menu">
                 <ul>
-                    <li><a href=index><i class="fas fa-home" aria-hidden="true"></i> Accueil
+                    <li><a href="/myfirstapp/index"><i class="fas fa-home" aria-hidden="true"></i> Accueil
                         </a></li>
-                    <li><a href="passion" target="blank"><i class="far fa-newspaper"></i> Passion
+                    <li><a href="/myfirstapp/passion" target="blank"><i class="far fa-newspaper"></i> Identification
+                        </a></li>
+                     <li><a href="/myfirstapp/ajout" target="blank"><i class="far fa-newspaper"></i> Ajout
                         </a></li>
                     <li><a href="#ancre"><i class="fas fa-envelope"></i> Contact
                         </a></li>
@@ -25,5 +31,27 @@
     </header>
 {% block content %}
 {% endblock %}
+    <footer>
+        <div class="colonne">
+            <h3>SOURCE</h3>
+            <p>Créateur</p>
+            <p>Julien Losser</p>
+            <p>Copyright <i class="far fa-copyright"></i></p>
+        </div>
+        <div class="colonne">
+            <h3>Mes réseaux sociaux</h3>
+            <p><a href="https://www.linkedin.com/in/julien-losser-567161221/">Linkedin <i class="fab fa-linkedin"></i></a></p>
+            <p><a href="https://discord.gg/K3pvXHwHQu">Discord <i class="fab fa-discord"></i></a></p>
+            <p><a href="https://twitter.com/BCL_APOKLYPS"> Twitter <i class="fab fa-twitter"></i></a></p>
+        </div>
+        <div class="colonne">
+            <h3>Cordonnées PRO</h3>
+            <p><a href="mailto:julien.losser@uha.fr">julien.losser@uha.fr </a></p>
+            <p><a href="mailto:julien.losser22@gmail.com">julien.losser22@gmail.com</a></p>
+            <a name="ancre"></a>
+        </div>
+    </footer>
 </body>
 </html>
+{% block footer %}
+{% endblock %}

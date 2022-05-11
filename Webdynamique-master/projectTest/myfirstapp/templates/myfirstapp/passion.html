@@ -1,8 +1,18 @@
  {% extends 'myfirstapp/main.html' %}
  {% block content %}
- <head>
- <title>{{% block title %}
- Passion
- {% endblock %}</title>
- </head>
+
+ <title>{{% block title %} Identification {% endblock %}</title>
+
+
+  {% load static %}
+ <!-- les champs de formulaires -->
+     <form method="post" action="/myfirstapp/affiche/">
+    {% csrf_token %}
+    <label for="Nom"> Nom :</label>
+    <input type="text" name="Nom"/>
+        <label for="password">Mots de passe :</label>
+        <input type="password" id="pass" name="password" minlength="8" required>
+        <input type="submit" value="envoyer"/>
+        </form>
+    <img alt="Logo" src="{%static 'myfirstapp/gif.gif' %}"  class="gif"/>
  {% endblock %}

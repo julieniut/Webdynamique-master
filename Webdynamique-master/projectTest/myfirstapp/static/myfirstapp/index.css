@@ -54,11 +54,16 @@ nav ul li a {
 }
 
 /* Lien */
+a{
+    color:  antiquewhite;
+    text-decoration-line: none}
+
 a:hover {
+    color: darkslateblue;
     border-color: #fff;
     padding-bottom: 2px;
-
 }
+
 
 /* TEXTE */
 .symbole {
@@ -78,15 +83,6 @@ a:hover {
     width: 90%;
 
 
-}
-
-/* Image */
-aside {
-    float: right;
-    width: 25%;
-    box-sizing: border-box;
-    padding: 3%;
-    text-align: center;
 }
 
 
@@ -130,24 +126,17 @@ footer .colonne h3 {
 }
 
 
-
 /* Apparition */
 
-h1.titre {
-    margin-top: 30px;
-    margin-left: 10%;
-    text-align: center;
-    animation: apparition 0.8s ease-out;
-}
 
 .titre {
     margin-top: 30px;
-    margin-left: 3%;
+    margin-left: 5%;
     text-align: center;
     animation: apparition 0.8s ease-out;
 }
 
-
+/* Apparition */
 @keyframes apparition {
     from {
         opacity: 0;
@@ -164,3 +153,8 @@ h1.titre {
 @media screen and (min-width: 0px) and (max-width: 900px) {
     h1 {display: none;}
    p.titre {display: none;}
+    .gif {display: none;}
+
+
+
+}

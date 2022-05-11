@@ -1,0 +1,21 @@
+{% extends 'myfirstapp/main.html' %}
+ {% block content %}
+
+ <title>{{% block title %}  Ajout  {% endblock %}</title>
+
+<section>
+     {% if id == None %}
+     <form method="post" action="/myfirstapp/traitement/">
+         {% else %}
+       <form method="post" action="/myfirstapp/updatelivre/{{id}}/">
+        {% endif %}
+        {% csrf_token%}
+           <h1 class="titre"> Remplisez le formulaire</h1>
+            <br>
+            {{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste-->
+                <input type="submit" value="envoyer les données">
+             </form>
+     </form> </br>
+
+</section>
+ {% endblock %}

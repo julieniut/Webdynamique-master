@@ -21,3 +21,5 @@ class Nom(models.Model):
         chaine2 = f"{self.Nom} "
         return chaine2
 
+    def dico(self):
+        return {"Nom": self.Nom,}

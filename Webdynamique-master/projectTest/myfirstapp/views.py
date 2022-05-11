@@ -7,8 +7,6 @@ def index(request):
     liste = list(models.Livre.objects.all())
     return render(request, 'myfirstapp/index.html',{"liste": liste})
 
-def passion(request):
-    return render(request,'myfirstapp/passion.html')
 
 
 
@@ -34,19 +32,19 @@ def traitement(request):
         return render(request,"myfirstapp/ajout.html",{"form": lform})
 
 
-def identification(request):
+def passion(request):
      if request.method == "POST": # arrive en cas de retour sur cette page après une saisie invalide on récupère donc les données. Normalement nous ne devrions pas passer par ce chemin la pour le traitement des données
         form = NomForm(request)
         if form.is_valid(): # validation du formulaire.
             nom = form.save() # sauvegarde dans la base
             return render(request,"myfirstapp/affiche.html",{"nom" : nom}) #envoie vers une page d'affichage du livre créé
         else:
-            return HttpResponseRedirect("/myfirstapp/affiche")
+            return HttpResponseRedirect("/myfirstapp/")
      else:
          form = NomForm() # création d'un formulaire vide
-         return render(request,"myfirstapp/affiche.html",{"form" : form})
+         return render(request,"myfirstapp/passion.html",{"form" : form})
 
-def traitement2(request):
+def traitementnom(request):
     nform = LivreForm(request.POST)
     if nform.is_valid():
         nom = nform.save()
@@ -58,7 +56,7 @@ def traitement2(request):
 def updatelivre(request, id):
     livre = models.Livre.objects.get(pk=id)
     form = LivreForm(livre.dico())
-    return render(request,"myfirstapp/ajout.html/", {"form": form, "id": id})
+    return render(request,"myfirstapp/ajout.html", {"form": form, "id": id})
 
 def update(request, id):
     lform = LivreForm(request.POST)
@@ -66,10 +64,14 @@ def update(request, id):
             livre = lform.save(commit=False)
             livre.id = id # modification de l'id de l'objet
             livre.save() # mise à jour dans la base puisque l'id du livre existe déja.
-            return HttpResponseRedirect("/myfirstapp/")
+            return HttpResponseRedirect("/myfirstapp/index")
     else:
-            return render(request, "myfirstapp/update.html/", {"form": lform, "id": id})
+            return render(request, "myfirstapp/update.html", {"form": lform, "id": id})
 
+def delete(request,id):
+    livre = models.Livre.objects.get(pk=id)
+    livre.delete()
+    return HttpResponseRedirect("/myfirstapp/index")
 
 
 def affiche(request, id):

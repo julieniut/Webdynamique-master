@@ -3,6 +3,7 @@
 
      <title>{{% block title %} AFFICHE {% endblock %}</title>
 
-    <p> vous avez ajouté le livre suivant {{livre}} {{livre.id}} </p>
-     <p> Votre nom: {{Nom}} {{Nom.id}} </p>
+    <p> Vous avez ajouté le livre suivant {{livre}} {{livre.id}} </p>
+      <!-- <p> Votre nom: {{Nom}} {{Nom.id}} </p> -->
+     <img src="{{livre.imaurl}}">
 {% endblock %}

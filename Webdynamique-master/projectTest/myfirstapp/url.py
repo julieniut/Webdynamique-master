@@ -10,6 +10,5 @@ urlpatterns = [
     path('affiche/<int:id>/',views.affiche),
     path('traitementnom/', views.traitementnom),
     path('update/<int:id>/',views.update),
-    path('updatelivre/<int:id>/', views.updatelivre),
     path('delete/<int:id>/', views.delete),
 ]

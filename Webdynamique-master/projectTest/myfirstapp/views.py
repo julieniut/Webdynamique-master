@@ -5,9 +5,7 @@ from . import models
 
 def index(request):
     liste = list(models.Livre.objects.all())
-    return render(request, 'myfirstapp/index.html',{"liste": liste})
-
-
+    return render(request,'myfirstapp/index.html',{"liste": liste})
 
 
 def ajout(request):
@@ -53,10 +51,6 @@ def traitementnom(request):
         return render(request,"myfirstapp/passion.html",{"form": nform})
 
 
-def updatelivre(request, id):
-    livre = models.Livre.objects.get(pk=id)
-    form = LivreForm(livre.dico())
-    return render(request,"myfirstapp/ajout.html", {"form": form, "id": id})
 
 def update(request, id):
     lform = LivreForm(request.POST)
@@ -64,9 +58,17 @@ def update(request, id):
             livre = lform.save(commit=False)
             livre.id = id # modification de l'id de l'objet
             livre.save() # mise à jour dans la base puisque l'id du livre existe déja.
-            return HttpResponseRedirect("/myfirstapp/index")
+            return HttpResponseRedirect("/myfirstapp/")
     else:
             return render(request, "myfirstapp/update.html", {"form": lform, "id": id})
+
+
+def updatelivre(request, id):
+    livre = models.livre.objects.get(pk=id)
+    form = LivreForm(livre.dico())
+    return render(request,"film/ajout.html", {"form": form, "id": id})
+
+
 
 def delete(request,id):
     livre = models.Livre.objects.get(pk=id)

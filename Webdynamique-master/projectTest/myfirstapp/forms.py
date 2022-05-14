@@ -5,13 +5,14 @@ from . import models
 class LivreForm(ModelForm):
     class Meta:
         model = models.Livre
-        fields = ('titre','auteur','date_parution','nombre_pages','resume')
+        fields = ('titre','auteur','date_parution','nombre_pages','resume','imaurl',)
         labels = {
         'titre' :_('Titre'),
-        'auteur' :_('Auteur') ,
+        'auteur' :_('Auteur'),
         'date_parution' :_('date de parution'),
         'nombre_pages' :_('nombres de pages'),
-        'resume' :_('Résumé')
+        'resume' :_('Résumé'),
+        'imaurl':_('Image avec Url')
         }
 class NomForm(ModelForm):
     class Meta:

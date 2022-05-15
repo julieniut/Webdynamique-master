@@ -3,7 +3,7 @@
 
  <title>{{% block title %}  Ajout  {% endblock %}</title>
 
-<section>
+<section class="margin">
      {% if id == None %}
      <form method="post" action="/myfirstapp/traitement/">
          {% else %}
@@ -13,7 +13,7 @@
            <h1 class="titre"> Remplisez le formulaire</h1>
             <br>
             {{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste-->
-                <input type="submit" value="envoyer les données">
+                <input type="submit" value="envoyer les données"/>
             </br>
      </form>
 

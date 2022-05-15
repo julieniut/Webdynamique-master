@@ -9,7 +9,7 @@
         <p class="titre">SUR CETTE PAGE</p>
         <p class="titre">Vous trouvez la liste de tout les formulaires</p>
         <ol>{% for l in liste %}
-            <li>{{l}} : <a href="/myfirstapp/update/{{l.id}}/"> Changer le formulaire du livre</a>
+            <li class="margin">{{l}} : <a href="/myfirstapp/update/{{l.id}}/"> Changer le formulaire du livre</a>
                 OU<a href="/myfirstapp/affiche/{{l.id}}/"> l'afficher </a>
                 OU<a href="/myfirstapp/delete/{{l.id}}/"> Supprimer </a></li>
             {% endfor %}

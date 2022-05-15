@@ -126,7 +126,13 @@ footer .colonne h3 {
     text-align: center;
     font-family: 'Abril Fatface', cursive;
 }
+/* Image */
 
+img {width: 20%;
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Apparition */
 

@@ -7,12 +7,13 @@ class Livre(models.Model): #déclare la classe Livre héritant de la classe Mode
     nombre_pages = models.IntegerField(blank=False) # champs de type entier devant être obligatoirement rempli
     resume = models.TextField(max_length=1500, null=True, blank=True) # champs de type text long
     imaurl = models.URLField(max_length=300, null=True, blank=True)
+    nom = models.ForeignKey("nom", on_delete=models.CASCADE,null=True)
     def __str__(self):
         chaine = f"{self.titre} écrit par {self.auteur} édité le {self.date_parution}"
         return chaine
 
     def dico(self):
-        return {"titre":self.titre,'auteur':self.auteur,'date_parution':self.date_parution,'nombres_pages':self.nombre_pages,'resume':self.resume,'imaurl':self.imaurl}
+        return {"titre":self.titre,'auteur':self.auteur,'date_parution':self.date_parution,'nombres_pages':self.nombre_pages,'resume':self.resume,'imaurl':self.imaurl,"nom":self.nom}
 
 
 

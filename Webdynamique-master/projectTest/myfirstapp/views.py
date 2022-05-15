@@ -52,7 +52,7 @@ def traitementnom(request):
 
 
 
-def update(request, id):
+def updatelivre(request, id):
     lform = LivreForm(request.POST)
     if lform.is_valid():
             livre = lform.save(commit=False)
@@ -63,10 +63,10 @@ def update(request, id):
             return render(request, "myfirstapp/update.html", {"form": lform, "id": id})
 
 
-def updatelivre(request, id):
-    livre = models.livre.objects.get(pk=id)
+def update(request, id):
+    livre = models.Livre.objects.get(pk=id)
     form = LivreForm(livre.dico())
-    return render(request,"film/ajout.html", {"form": form, "id": id})
+    return render(request,"myfirstapp/ajout.html", {"form": form, "id": id})
 
 
 

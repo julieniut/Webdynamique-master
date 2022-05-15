@@ -7,7 +7,7 @@
   {% load static %}
 
  <!-- les champs de formulaires -->
-     <form method="post" action="/myfirstapp/affiche/">
+     <form class="texte" method="post" action="/myfirstapp/affiche/">
     {% csrf_token %}
     <label for="Nom"> Nom :</label>
     <input type="text" name="Nom"/>
@@ -15,5 +15,5 @@
         <input type="password" name="password" minlength="8" required>
         <input type="submit" value="envoyer"/>
         </form>
-    <img alt="Logo" src="{% static '/myfirstapp/gif.gif'%}"  class="gif"/>
+    <img  class="gif" alt="Logo" src="{% static '/myfirstapp/gif.gif'%}"/>
  {% endblock %}

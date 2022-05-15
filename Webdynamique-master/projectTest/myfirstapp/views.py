@@ -35,7 +35,7 @@ def passion(request):
         form = NomForm(request)
         if form.is_valid(): # validation du formulaire.
             nom = form.save() # sauvegarde dans la base
-            return render(request,"myfirstapp/affiche.html",{"nom" : nom}) #envoie vers une page d'affichage du livre créé
+            return render(request,"myfirstapp/affichenom.html",{"nom" : nom}) #envoie vers une page d'affichage du livre créé
         else:
             return HttpResponseRedirect("/myfirstapp/")
      else:
@@ -46,7 +46,7 @@ def traitementnom(request):
     nform = NomForm(request.POST)
     if nform.is_valid():
         nom = nform.save()
-        return render(request,"myfirstapp/affiche.html",{"nom" : nom})
+        return render(request,"myfirstapp/affichenom.html",{"nom" : nom})
     else:
         return render(request,"myfirstapp/passion.html",{"form": nform})
 
@@ -81,4 +81,8 @@ def affiche(request, id):
     return render(request,"myfirstapp/affiche.html/", {"livre": livre})
 
 
+
+def affichenom(request, id):
+    nom = models.Nom.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
+    return render(request,"myfirstapp/affichenom.html/", {"nom": nom})
 

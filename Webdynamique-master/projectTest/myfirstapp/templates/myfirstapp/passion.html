@@ -9,11 +9,11 @@
  <!-- les champs de formulaires -->
      <form class="texte" method="post" action="/myfirstapp/affiche/">
     {% csrf_token %}
-    <label for="Nom"> Nom :</label>
-    <input type="text" name="Nom"/>
+      {{ form }}
         <label for="password">Mots de passe :</label>
         <input type="password" name="password" minlength="8" required>
+
         <input type="submit" value="envoyer"/>
         </form>
-    <img  class="gif" alt="Logo" src="{% static '/myfirstapp/gif.gif'%}"/>
+    <img  class="gif" alt="Logo" src="{%static '/myfirstapp/gif.gif' %}"/>
  {% endblock %}

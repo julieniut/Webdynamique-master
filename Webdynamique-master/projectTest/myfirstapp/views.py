@@ -43,7 +43,7 @@ def passion(request):
          return render(request,"myfirstapp/passion.html",{"form" : form})
 
 def traitementnom(request):
-    nform = LivreForm(request.POST)
+    nform = NomForm(request.POST)
     if nform.is_valid():
         nom = nform.save()
         return render(request,"myfirstapp/affiche.html",{"nom" : nom})

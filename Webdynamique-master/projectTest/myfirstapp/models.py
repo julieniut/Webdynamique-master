@@ -20,8 +20,8 @@ class Nom(models.Model):
     Nom = models.CharField(max_length=15)
 
     def __str__(self):
-        chaine2 = f"{self.Nom} "
-        return chaine2
+        chaine = f"{self.Nom} "
+        return chaine
 
     def dico(self):
         return {"Nom": self.Nom,}

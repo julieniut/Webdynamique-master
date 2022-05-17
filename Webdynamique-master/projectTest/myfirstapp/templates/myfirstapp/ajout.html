@@ -5,9 +5,9 @@
 
 <section class="margin">
      {% if id == None %}
-          <form method="post" action="/myfirstapp/updatelivre/{{id}}/">
+          <form method="post" action="/updatelivre/{{id}}/">
          {% else %}
-          <form method="post" action="/myfirstapp/traitement/">
+          <form method="post" action="/traitement/">
         {% endif %}
         {% csrf_token%}
            <h1 class="titre"> Remplisez le formulaire</h1>

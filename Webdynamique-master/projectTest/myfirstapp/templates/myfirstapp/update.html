@@ -3,7 +3,7 @@
 
   <title>{{% block title %} UPDATE  {% endblock %}</title>
 
-  <form method="post" action="/myfirstapp/update/{{livre.id}}/">
+  <form method="post" action="/update/{{livre.id}}/">
   {% csrf_token %}
   {{ form.as_ul }}
   <input type="submit" value="envoyer les données">

@@ -3,7 +3,8 @@
 
      <title>{{% block title %} AFFICHE {% endblock %}</title>
 
-    <p class="texte"> Vous avez ajouté le livre suivant {{livre}} {{livre.id}} </p>
+    <p class="texte"> Vous avez ajouté le livre suivant {{livre}} </p>
+     <p class="texte">C'est le {{livre.id}} livre renseigner </p>
       <!-- <p> Votre nom: {{Nom}} {{Nom.id}} </p> -->
      <img class="image" src="{{livre.imaurl}}">
 {% endblock %}

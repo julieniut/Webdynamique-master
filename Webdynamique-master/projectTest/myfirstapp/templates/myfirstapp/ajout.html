@@ -5,9 +5,9 @@
 
 <section class="margin">
      {% if id == None %}
-          <form method="post" action="/updatelivre/{{id}}/">
+    <form method="post" action="/traitement/">
          {% else %}
-          <form method="post" action="/traitement/">
+    <form method="post" action="/updatelivre/{{id}}/">
         {% endif %}
         {% csrf_token%}
            <h1 class="titre"> Remplisez le formulaire</h1>
@@ -15,7 +15,7 @@
             {{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste-->
                 <input type="submit" value="envoyer les données"/>
             </br>
-     </form>
+    </form> </form>
 
 </section>
  {% endblock %}

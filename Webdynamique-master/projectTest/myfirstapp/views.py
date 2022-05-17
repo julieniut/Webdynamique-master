@@ -15,7 +15,7 @@ def ajout(request):
             livre = form.save() # sauvegarde dans la base
             return render(request,"myfirstapp/affiche.html",{"livre" : livre}) #envoie vers une page d'affichage du livre créé
      else:
-            return HttpResponseRedirect("/myfirstapp")
+            return HttpResponseRedirect("http://127.0.0.1:8000")
     else:
         form = LivreForm() # création d'un formulaire vide
         return render(request,"myfirstapp/ajout.html",{"form" : form})
@@ -58,9 +58,9 @@ def updatelivre(request, id):
             livre = lform.save(commit=False)
             livre.id = id # modification de l'id de l'objet
             livre.save() # mise à jour dans la base puisque l'id du livre existe déja.
-            return HttpResponseRedirect("/myfirstapp/")
+            return HttpResponseRedirect("http://127.0.0.1:8000")
     else:
-            return render(request, "myfirstapp/update.html", {"form": lform, "id": id})
+            return render(request,"myfirstapp/update.html", {"form": lform, "id": id})
 
 
 def update(request, id):
@@ -73,7 +73,7 @@ def update(request, id):
 def delete(request,id):
     livre = models.Livre.objects.get(pk=id)
     livre.delete()
-    return HttpResponseRedirect("/myfirstapp/index")
+    return HttpResponseRedirect("http://127.0.0.1:8000")
 
 
 def affiche(request, id):

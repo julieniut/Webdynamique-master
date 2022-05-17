@@ -81,7 +81,6 @@ def affiche(request, id):
     return render(request,"myfirstapp/affiche.html/", {"livre": livre})
 
 
-
 def affichenom(request, id):
     nom = models.Nom.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
     return render(request,"myfirstapp/affichenom.html/", {"nom": nom})
